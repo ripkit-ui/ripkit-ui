@@ -1,0 +1,22 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "moduleResolution": "bundler",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "declaration": true,
+        "declarationMap": true,
+        "outDir": "./dist",
+        "jsx": "react-jsx",
+        "paths": {
+            "@ripkit/tokens": ["../tokens/src"],
+            "@ripkit/utils": ["../utils/src"]
+        }
+    },
+    "include": ["src/**/*"],
+    "exclude": ["dist", "node_modules"],
+    "references": [{ "path": "../tokens" }, { "path": "../utils" }]
+}
+

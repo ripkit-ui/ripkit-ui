@@ -1,0 +1,33 @@
+{
+    "name": "@ripkit/tokens",
+    "version": "0.1.0",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js"
+        },
+        "./globals.css": "./src/globals.css",
+        "./colors": {
+            "types": "./dist/colors.d.ts",
+            "import": "./dist/colors.mjs",
+            "require": "./dist/colors.js"
+        }
+    },
+    "files": [
+        "dist",
+        "src/globals.css"
+    ],
+    "scripts": {
+        "build": "tsup src/index.ts src/colors.ts --format cjs,esm --dts",
+        "dev": "tsup src/index.ts src/colors.ts --format cjs,esm --dts --watch",
+        "clean": "rm -rf dist"
+    },
+    "devDependencies": {
+        "tsup": "^8.0.1",
+        "typescript": "^5.8.3"
+    }
+}
